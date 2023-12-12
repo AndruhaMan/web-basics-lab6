@@ -18,7 +18,6 @@ bot.on(message('text'), async (ctx) => {
 });
 
 async function searchBook(ctx, message) {
-  console.log(message)
   const query = getQuery(message);
   try {
     const res = await find(query);
