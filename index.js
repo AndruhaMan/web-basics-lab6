@@ -1,12 +1,15 @@
 import { Telegraf, Markup } from 'telegraf';
 import { message } from 'telegraf/filters'
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes/';
 
 const NO_COVER_IMG_LINK = 'https://upload.wikimedia.org/wikipedia/commons/9/9b/No_cover.JPG?20070608130414';
 let startIndex = 0;
 
-const bot = new Telegraf('5985951539:AAFknqhLK4PftVA-GPqvsb__rNDL4lD87HQ');
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
   ctx.reply("Try to find something");
